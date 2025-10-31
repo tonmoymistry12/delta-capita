@@ -1,0 +1,160 @@
+@use '../../styles/variables' as *;
+
+.container {
+  text-align: center;
+  margin-top: $spacing-xl;
+  padding: $spacing-xl calc($spacing-md * 2);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid rgba(108, 92, 231, 0.1);
+  animation: fadeIn 0.3s ease;
+
+  @media (min-width: $breakpoint-sm) {
+    margin-top: calc($spacing-xl + $spacing-md);
+    padding: calc($spacing-xl + $spacing-md) calc($spacing-lg * 2);
+    border-radius: 20px;
+    box-shadow: $shadow-md;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: calc($spacing-xl * 2);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.spinnerWrapper {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+
+  @media (min-width: $breakpoint-sm) {
+    width: 76px;
+    height: 76px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+.progress {
+  width: 64px !important;
+  height: 64px !important;
+  color: $primary-color;
+  position: relative;
+  z-index: 2;
+
+  @media (min-width: $breakpoint-sm) {
+    width: 76px !important;
+    height: 76px !important;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: 88px !important;
+    height: 88px !important;
+  }
+}
+
+.pulseRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border: 3px solid $primary-color;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @media (min-width: $breakpoint-sm) {
+    width: 76px;
+    height: 76px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: 88px;
+    height: 88px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.label {
+  margin-top: $spacing-lg;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 $spacing-md;
+  color: $text-primary;
+  background: $primary-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (min-width: $breakpoint-sm) {
+    margin-top: $spacing-xl;
+    font-size: 1.125rem;
+  }
+}
+
+.dots {
+  display: inline-block;
+  min-width: 24px;
+  text-align: left;
+
+  span {
+    animation: blink 1.4s infinite;
+    -webkit-text-fill-color: $primary-color;
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@keyframes blink {
+  0%, 20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+  60%, 100% {
+    opacity: 0.2;
+  }
+}
+
+
+

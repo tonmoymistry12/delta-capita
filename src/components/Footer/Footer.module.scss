@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  background-color: $bg-card;
+  color: $text-primary;
+  padding: $spacing-xs 0;
+  flex-shrink: 0;
+  border-top: 1px solid $border-light;
+  box-shadow: 0 -2px 10px rgba(108, 92, 231, 0.08);
+
+  @media (min-width: $breakpoint-sm) {
+    padding: $spacing-sm 0;
+  }
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $padding-container;
+  text-align: center;
+}
+
+.copyright {
+  margin: 0;
+  font-size: $font-size-sm;
+  color: $text-secondary;
+  font-weight: 500;
+}
