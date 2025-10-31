@@ -18,53 +18,119 @@
   }
 }
 
-.iframeContainer {
+.pdfContainer {
   position: relative;
   width: 100%;
-  height: calc(100vh - 120px); // Full height minus header/footer/buttons
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: $spacing-sm;
+  background: #f5f5f5;
   
   @media (min-width: $breakpoint-sm) {
-    height: 70vh;
     min-height: 500px;
-    max-height: 900px;
+    max-height: 75vh;
+    padding: $spacing-md;
   }
 
   @media (min-width: $breakpoint-md) {
-    height: 75vh;
-  }
-
-  @media (min-width: $breakpoint-lg) {
-    height: 600px;
-    max-height: 1000px;
+    min-height: 600px;
+    padding: $spacing-lg;
   }
 }
 
-.iframe {
-  border: none;
-  display: block;
+.document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 100%;
+  max-width: 100%;
 }
 
-.mobileMessage {
+.page {
+  margin-bottom: $spacing-sm;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  
+  @media (min-width: $breakpoint-sm) {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.loadingContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  padding: $spacing-lg;
-  text-align: center;
-  color: $text-secondary;
+  min-height: 300px;
+  gap: $spacing-md;
   
   p {
-    margin: $spacing-sm 0;
+    color: $text-secondary;
     font-size: 16px;
-    line-height: 1.5;
-    
-    &:first-child {
-      font-weight: 600;
-      color: $text-primary;
-    }
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: $spacing-lg;
+  text-align: center;
+  
+  p {
+    color: #d32f2f;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  padding: $spacing-xs $spacing-md;
+  background: $bg-card;
+  border-radius: 30px;
+  box-shadow: $shadow-sm;
+  
+  @media (min-width: $breakpoint-sm) {
+    gap: $spacing-md;
+    padding: $spacing-sm $spacing-lg;
+  }
+}
+
+.pageInfo {
+  font-size: 13px;
+  font-weight: 500;
+  color: $text-primary;
+  min-width: 90px;
+  text-align: center;
+  
+  @media (min-width: $breakpoint-sm) {
+    font-size: 15px;
+    min-width: 110px;
+  }
+}
+
+.navButton {
+  color: $primary-color !important;
+  
+  &:disabled {
+    color: $text-muted !important;
   }
 }
 

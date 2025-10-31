@@ -18,8 +18,10 @@
     "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.4",
     "axios": "^1.13.1",
+    "pdfjs-dist": "^5.4.296",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-pdf": "^10.2.0",
     "react-router-dom": "^7.9.5"
   },
   "devDependencies": {
@@ -27,6 +29,7 @@
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
+    "@types/react-pdf": "^6.2.0",
     "@vitejs/plugin-react": "^5.0.4",
     "cross-env": "^10.1.0",
     "eslint": "^9.36.0",
