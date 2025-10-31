@@ -46,6 +46,28 @@
   height: 100%;
 }
 
+.mobileMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: $spacing-lg;
+  text-align: center;
+  color: $text-secondary;
+  
+  p {
+    margin: $spacing-sm 0;
+    font-size: 16px;
+    line-height: 1.5;
+    
+    &:first-child {
+      font-weight: 600;
+      color: $text-primary;
+    }
+  }
+}
+
 .actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
